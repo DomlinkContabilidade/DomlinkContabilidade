@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Domlink Contabilidade | Contabilidade em Aracaju - SE</title>
+
+    <meta name="description"
+          content="Domlink Contabilidade em Aracaju - SE. Serviços de contabilidade, apoio administrativo, preparação de documentos e soluções empresariais.">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0b2d4d;
+            --primary-dark: #071d32;
+            --secondary: #087ea4;
+            --accent: #19b5d8;
+            --light: #f5f9fc;
+            --text: #253746;
+            --muted: #6c7a89;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: #fff;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(7, 29, 50, 0.97);
+            padding: 16px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff !important;
+        }
+
+        .navbar-brand span {
+            color: var(--accent);
+        }
+
+        .navbar .nav-link {
+            color: rgba(255,255,255,.85);
+            font-weight: 500;
+            margin-left: 15px;
+            transition: .3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .btn-primary-custom {
+            background: var(--accent);
+            border: none;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary-custom:hover {
+            background: #0c9cbe;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(120deg, rgba(7,29,50,.98), rgba(11,45,77,.93)),
+                url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80')
+                center/cover;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -200px;
+            bottom: -250px;
+            background: rgba(25,181,216,.15);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            background: rgba(25,181,216,.15);
+            border: 1px solid rgba(25,181,216,.35);
+            color: #76e4fa;
+            border-radius: 30px;
+            font-size: .85rem;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.08;
+            font-weight: 800;
+            max-width: 800px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            color: rgba(255,255,255,.78);
+            font-size: 1.1rem;
+            max-width: 650px;
+            line-height: 1.8;
+            margin: 25px 0;
+        }
+
+        .hero-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+            color: rgba(255,255,255,.8);
+        }
+
+        .hero-info div {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .hero-info i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-label {
+            color: var(--secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: .82rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 18px;
+        }
+
+        .section-text {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* STATS */
+        .stats {
+            margin-top: -70px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 45px rgba(7,29,50,.1);
+            height: 100%;
+        }
+
+        .stat-card i {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .stat-card h4 {
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* SERVICES */
+        .services-section {
+            background: var(--light);
+        }
+
+        .service-card {
+            background: #fff;
+            border: 1px solid #e7eef3;
+            border-radius: 15px;
+            padding: 32px;
+            height: 100%;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(7,29,50,.10);
+            border-color: rgba(25,181,216,.35);
+        }
+
+        .service-icon {
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e8f8fc;
+            color: var(--secondary);
+            border-radius: 13px;
+            font-size: 1.7rem;
+            margin-bottom: 22px;
+        }
+
+        .service-card h4 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ABOUT */
+        .about-box {
+            background: var(--primary);
+            color: #fff;
+            border-radius: 20px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-box::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            right: -100px;
+            top: -100px;
+            border: 40px solid rgba(25,181,216,.12);
+            border-radius: 50%;
+        }
+
+        .about-box h3 {
+            font-weight: 800;
+            font-size: 2rem;
+        }
+
+        .about-box p {
+            color: rgba(255,255,255,.75);
+            line-height: 1.8;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0 0;
+        }
+
+        .check-list li {
+            margin-bottom: 13px;
+            color: rgba(255,255,255,.9);
+        }
+
+        .check-list i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        /* CNAES */
+        .cnae-card {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e5edf2;
+            padding: 22px;
+            height: 100%;
+        }
+
+        .cnae-code {
+            display: inline-block;
+            background: #eaf8fb;
+            color: var(--secondary);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: .8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .cnae-card h5 {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .cnae-card p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* DIFFERENTIALS */
+        .feature {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            min-width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: var(--accent);
+            border-radius: 10px;
+            font-size: 1.35rem;
+        }
+
+        .feature h5 {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .feature p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* CTA */
+        .cta {
+            background:
+                linear-gradient(120deg, rgba(7,29,50,.98), rgba(8,126,164,.95));
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-weight: 800;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .cta p {
+            color: rgba(255,255,255,.75);
+            max-width: 700px;
+            margin: 15px auto 30px;
+            line-height: 1.8;
+        }
+
+        /* CONTACT */
+        .contact-card {
+            background: #fff;
+            border: 1px solid #e5edf2;
+            padding: 28px;
+            border-radius: 15px;
+            height: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item i {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eaf8fb;
+            color: var(--secondary);
+            border-radius: 9px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item h6 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .contact-item p {
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .map-box {
+            min-height: 380px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #eaf1f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,.65);
+            padding: 55px 0 25px;
+        }
+
+        footer h5 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            line-height: 1.8;
+        }
+
+        .footer-brand {
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+
+        .footer-brand span {
+            color: var(--accent);
+        }
+
+        .social-link {
+            display: inline-flex;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: rgba(255,255,255,.07);
+            color: #fff;
+            text-decoration: none;
+            margin-right: 7px;
+            transition: .3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.08);
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: .85rem;
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 1.7rem;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0,0,0,.2);
+            z-index: 1000;
+            transition: .3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.08);
+            color: #fff;
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                min-height: 650px;
+            }
+
+            .about-box {
+                padding: 30px;
+            }
+
+            .stats {
+                margin-top: -30px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#inicio">
+            Domlink<span>.</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicos">Serviços</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#empresa">Empresa</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#atividades">Atividades</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                    <a href="https://wa.me/5579998411306"
+                       target="_blank"
+                       class="btn btn-primary-custom">
+                        <i class="bi bi-whatsapp me-1"></i>
+                        Fale Conosco
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+<section class="hero" id="inicio">
+
+    <div class="container hero-content">
+
+        <div class="hero-badge">
+            <i class="bi bi-patch-check-fill me-1"></i>
+            Domlink Contabilidade
+        </div>
+
+        <h1>
+            Contabilidade que
+            <span>simplifica</span>
+            o seu negócio.
+        </h1>
+
+        <p>
+            Soluções contábeis e administrativas para empresas que
+            buscam organização, segurança e tranquilidade para
+            crescer.
+        </p>
+
+        <div class="d-flex flex-wrap gap-3">
+
+            <a href="#contato" class="btn btn-primary-custom btn-lg">
+                Solicitar atendimento
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+
+            <a href="#servicos"
+               class="btn btn-outline-light btn-lg">
+                Conheça nossos serviços
+            </a>
+
+        </div>
+
+        <div class="hero-info">
+
+            <div>
+                <i class="bi bi-geo-alt-fill"></i>
+                Aracaju - Sergipe
+            </div>
+
+            <div>
+                <i class="bi bi-building-check"></i>
+                Empresa Ativa
+            </div>
+
+            <div>
+                <i class="bi bi-award-fill"></i>
+                CRC SE-001020/O
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+<div class="stats">
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-calendar-check"></i>
+                    <h4>2026</h4>
+                    <p>Ano de fundação</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-building"></i>
+                    <h4>ME</h4>
+                    <p>Micro Empresa</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-file-earmark-check"></i>
+                    <h4>Simples</h4>
+                    <p>Optante pelo Simples Nacional</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-shield-check"></i>
+                    <h4>Ativa</h4>
+                    <p>Situação cadastral</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================
+     SERVIÇOS
+========================= -->
+<section class="services-section" id="servicos">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                O que fazemos
+            </div>
+
+            <h2 class="section-title">
+                Soluções para sua empresa
+            </h2>
+
+            <p class="section-text mx-auto" style="max-width: 700px;">
+                Serviços pensados para ajudar empresas e empreendedores
+                a manterem suas atividades organizadas e preparadas
+                para novos desafios.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-calculator"></i>
+                    </div>
+
+                    <h4>Contabilidade</h4>
+
+                    <p>
+                        Organização e acompanhamento das informações
+                        contábeis da empresa, proporcionando maior
+                        controle sobre o negócio.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <h4>Documentação</h4>
+
+                    <p>
+                        Preparação de documentos e serviços
+                        especializados de apoio administrativo.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+
+                    <h4>Apoio Administrativo</h4>
+
+                    <p>
+                        Serviços combinados de escritório e suporte
+                        para facilitar a rotina administrativa.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-globe2"></i>
+                    </div>
+
+                    <h4>Soluções Digitais</h4>
+
+                    <p>
+                        Portais, conteúdo e serviços de informação
+                        na internet para apoiar necessidades digitais.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-person-check"></i>
+                    </div>
+
+                    <h4>Atendimento Personalizado</h4>
+
+                    <p>
+                        Atendimento próximo e direcionado às
+                        necessidades de cada cliente e empresa.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-gear-wide-connected"></i>
+                    </div>
+
+                    <h4>Suporte Empresarial</h4>
+
+                    <p>
+                        Apoio para tornar processos administrativos
+                        mais organizados e eficientes.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SOBRE
+========================= -->
+<section id="empresa">
+
+    <div class="container">
+
+        <div class="about-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <div class="section-label text-info">
+                        Sobre a Domlink
+                    </div>
+
+                    <h3>
+                        Organização, confiança e informação
+                        para o seu negócio.
+                    </h3>
+
+                    <p>
+                        A Domlink Contabilidade LTDA é uma empresa
+                        localizada em Aracaju, Sergipe, com atividade
+                        principal voltada para serviços de contabilidade.
+                    </p>
+
+                    <p>
+                        Nosso propósito é oferecer soluções que auxiliem
+                        empresas e empreendedores na organização de suas
+                        rotinas contábeis e administrativas.
+                    </p>
+
+                    <ul class="check-list">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Atendimento personalizado
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Organização das informações
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Soluções contábeis e administrativas
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Atendimento em Aracaju e região
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-5 mt-4 mt-lg-0">
+
+                    <div class="bg-white text-dark rounded-4 p-4">
+
+                        <h5 class="fw-bold mb-4">
+                            <i class="bi bi-building me-2 text-info"></i>
+                            Dados da empresa
+                        </h5>
+
+                        <div class="mb-3">
+                            <small class="text-muted">Razão Social</small>
+                            <div class="fw-semibold">
+                                Domlink Contabilidade LTDA
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <small class="text-muted">CNPJ</small>
+                            <div class="fw-semibold">
+                                67.020.721/0001-34
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <small class="text-muted">Natureza Jurídica</small>
+                            <div class="fw-semibold">
+                                Sociedade Empresária Limitada
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <small class="text-muted">Capital Social</small>
+                            <div class="fw-semibold">
+                                R$ 30.000,00
+                            </div>
+                        </div>
+
+                        <div>
+                            <small class="text-muted">CRC</small>
+                            <div class="fw-semibold">
+                                SE-001020/O
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     ATIVIDADES / CNAES
+========================= -->
+<section class="services-section" id="atividades">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Atividades
+            </div>
+
+            <h2 class="section-title">
+                Áreas de atuação
+            </h2>
+
+            <p class="section-text mx-auto" style="max-width: 700px;">
+                Conheça as atividades econômicas registradas da
+                Domlink Contabilidade.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        ATIVIDADE PRINCIPAL
+                    </span>
+
+                    <h5>
+                        69.20-6-01
+                    </h5>
+
+                    <p>
+                        Atividades de contabilidade
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        CNAE 63.19-4-00
+                    </span>
+
+                    <h5>
+                        Serviços de informação na internet
+                    </h5>
+
+                    <p>
+                        Portais, provedores de conteúdo e outros
+                        serviços de informação na internet.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        CNAE 82.11-3-00
+                    </span>
+
+                    <h5>
+                        Serviços de escritório
+                    </h5>
+
+                    <p>
+                        Serviços combinados de escritório e apoio
+                        administrativo.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        CNAE 82.19-9-99
+                    </span>
+
+                    <h5>
+                        Preparação de documentos
+                    </h5>
+
+                    <p>
+                        Preparação de documentos e serviços
+                        especializados de apoio administrativo.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        CNAE 95.29-1-02
+                    </span>
+
+                    <h5>
+                        Serviços de chaveiro
+                    </h5>
+
+                    <p>
+                        Atividades relacionadas a serviços de chaveiros.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     DIFERENCIAIS
+========================= -->
+<section>
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-5 mb-5 mb-lg-0">
+
+                <div class="section-label">
+                    Nosso compromisso
+                </div>
+
+                <h2 class="section-title">
+                    Mais organização para sua rotina.
+                </h2>
+
+                <p class="section-text">
+                    Uma empresa bem organizada precisa de informações
+                    claras e processos estruturados. A Domlink trabalha
+                    para apoiar essa rotina.
+                </p>
+
+                <a href="https://wa.me/5579998411306"
+                   target="_blank"
+                   class="btn btn-primary-custom mt-3">
+                    <i class="bi bi-whatsapp me-2"></i>
+                    Falar com a Domlink
+                </a>
+
+            </div>
+
+            <div class="col-lg-7">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-person-heart"></i>
+                    </div>
+
+                    <div>
+                        <h5>Atendimento próximo</h5>
+                        <p>
+                            Comunicação clara e atendimento
+                            direcionado às necessidades do cliente.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+
+                    <div>
+                        <h5>Visão empresarial</h5>
+                        <p>
+                            Informações organizadas para ajudar
+                            na compreensão da realidade do negócio.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-lock"></i>
+                    </div>
+
+                    <div>
+                        <h5>Responsabilidade</h5>
+                        <p>
+                            Compromisso com uma rotina profissional
+                            e organizada no atendimento aos clientes.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-lightning-charge"></i>
+                    </div>
+
+                    <div>
+                        <h5>Praticidade</h5>
+                        <p>
+                            Soluções pensadas para facilitar processos
+                            e reduzir a complexidade da rotina empresarial.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+<section class="cta text-center">
+
+    <div class="container">
+
+        <h2>
+            Vamos cuidar melhor do seu negócio?
+        </h2>
+
+        <p>
+            Entre em contato com a Domlink Contabilidade e
+            conheça nossas soluções contábeis e administrativas.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+            <a href="https://wa.me/5579998411306"
+               target="_blank"
+               class="btn btn-primary-custom btn-lg">
+
+                <i class="bi bi-whatsapp me-2"></i>
+                WhatsApp
+
+            </a>
+
+            <a href="mailto:priftiaronkml@gmail.com"
+               class="btn btn-outline-light btn-lg">
+
+                <i class="bi bi-envelope me-2"></i>
+                Enviar E-mail
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTATO
+========================= -->
+<section id="contato">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Fale conosco
+            </div>
+
+            <h2 class="section-title">
+                Entre em contato
+            </h2>
+
+            <p class="section-text mx-auto" style="max-width: 650px;">
+                Estamos localizados em Aracaju, Sergipe.
+                Entre em contato para saber mais sobre nossos serviços.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+
+                <div class="contact-card">
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        <div>
+                            <h6>Telefone</h6>
+
+                            <p>
+                                <a href="tel:+5579998411306"
+                                   class="text-decoration-none text-secondary">
+                                    (79) 99841-1306
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-whatsapp"></i>
+
+                        <div>
+                            <h6>WhatsApp</h6>
+
+                            <p>
+                                <a href="https://wa.me/5579998411306"
+                                   target="_blank"
+                                   class="text-decoration-none text-secondary">
+                                    Atendimento pelo WhatsApp
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        <div>
+                            <h6>E-mail</h6>
+
+                            <p>
+                                <a href="mailto:priftiaronkml@gmail.com"
+                                   class="text-decoration-none text-secondary">
+                                    priftiaronkml@gmail.com
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <div>
+                            <h6>Endereço</h6>
+
+                            <p>
+                                Rua Sergipe, 825 - Sala 01<br>
+                                Siqueira Campos<br>
+                                Aracaju - SE<br>
+                                CEP 49075-540
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Sergipe+825+Siqueira+Campos+Aracaju+SE+49075-540"
+                       target="_blank"
+                       class="btn btn-primary-custom w-100 mt-2">
+
+                        <i class="bi bi-map me-2"></i>
+                        Ver no Google Maps
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-7">
+
+                <div class="map-box">
+
+                    <div class="map-placeholder">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        <h5 class="fw-bold text-dark">
+                            Domlink Contabilidade
+                        </h5>
+
+                        <p>
+                            Rua Sergipe, 825 - Sala 01<br>
+                            Siqueira Campos<br>
+                            Aracaju - Sergipe
+                        </p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Sergipe+825+Siqueira+Campos+Aracaju+SE+49075-540"
+                           target="_blank"
+                           class="btn btn-outline-primary">
+
+                            Abrir localização
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-5">
+
+                <div class="footer-brand">
+                    Domlink<span>.</span>
+                </div>
+
+                <p class="mt-3">
+                    Domlink Contabilidade LTDA.
+                    Soluções contábeis e administrativas
+                    para empresas e empreendedores.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="https://wa.me/5579998411306"
+                       target="_blank"
+                       class="social-link">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                    <a href="mailto:priftiaronkml@gmail.com"
+                       class="social-link">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+
+                    <a href="tel:+5579998411306"
+                       class="social-link">
+                        <i class="bi bi-telephone"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <h5>Navegação</h5>
+
+                <p class="mb-2">
+                    <a href="#inicio"
+                       class="text-decoration-none text-white-50">
+                        Início
+                    </a>
+                </p>
+
+                <p class="mb-2">
+                    <a href="#servicos"
+                       class="text-decoration-none text-white-50">
+                        Serviços
+                    </a>
+                </p>
+
+                <p class="mb-2">
+                    <a href="#empresa"
+                       class="text-decoration-none text-white-50">
+                        Empresa
+                    </a>
+                </p>
+
+                <p class="mb-2">
+                    <a href="#atividades"
+                       class="text-decoration-none text-white-50">
+                        Atividades
+                    </a>
+                </p>
+
+                <p class="mb-0">
+                    <a href="#contato"
+                       class="text-decoration-none text-white-50">
+                        Contato
+                    </a>
+                </p>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <h5>Informações</h5>
+
+                <p class="mb-2">
+                    <strong class="text-white">CNPJ:</strong><br>
+                    67.020.721/0001-34
+                </p>
+
+                <p class="mb-2">
+                    <strong class="text-white">CRC:</strong><br>
+                    SE-001020/O
+                </p>
+
+                <p class="mb-0">
+                    <strong class="text-white">Situação:</strong><br>
+                    <span class="text-info">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Ativa
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom text-center">
+
+            © 2026 Domlink Contabilidade LTDA.
+            Todos os direitos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP FLUTUANTE
+========================= -->
+<a href="https://wa.me/5579998411306"
+   target="_blank"
+   class="whatsapp"
+   aria-label="Falar pelo WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
